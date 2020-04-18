@@ -9,16 +9,18 @@ class myBinarySearchTreeNode{
     myValue = inValue;
     left = null;
     right = null;
-
   }
   
   myBinarySearchTreeNode(int[] A){
 
     // creates a new Binary Search Tree rooted at the first value in the array
-    myBinarySearchTreeNode tree = new myBinarySearchTreeNode(A[0]);
+    myValue = A[0];
+    left = null;
+    right = null;
+    //myBinarySearchTreeNode tree = new myBinarySearchTreeNode(A[0]);
     /// by inserting elements into the tree in the order they are given in A.
-    for(int i = 1; i < A.length; i ++)
-      tree.insert(A[i]);
+    for(int i = 1; i < A.length; i++)
+      insert(A[i]);
 
   }
 
@@ -52,9 +54,9 @@ class myBinarySearchTreeNode{
     int sum = 1;
 
     if(right != null)
-      sum += right.height();
+      sum += right.size();
     if(left != null)
-      sum += left.height();
+      sum += left.size();
 
     return sum;
   }
